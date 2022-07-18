@@ -1,10 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Button from "./Components/Button";
+import SearchBar from "./Components/SearchBar";
+import MainContainer from "./Components/MainContainer";
 
 function App() {
+  const [inputData, setInputData] = useState("Sample Text");
   return (
     <div className="App">
-      <header className="App-header">
+      <SearchBar setInputData={setInputData} />
+      <MainContainer inputData={inputData} />
+      {/* <header   className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +24,8 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+        <Button page="Home" />
+      </header> */}
     </div>
   );
 }
